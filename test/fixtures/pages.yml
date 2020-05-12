@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  permalink: 
+  position: 
+  visible: false
+
+two:
+  name: 
+  permalink: 
+  position: 
+  visible: false
