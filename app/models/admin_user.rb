@@ -1,7 +1,7 @@
 class AdminUser < ApplicationRecord
   has_secure_password
 
-  scope :sorted, -> lambda { order('last_name ASC, first_name ASC')}
+  scope :sorted, lambda { order('last_name ASC, first_name ASC')}
 
   has_secure_password
 
@@ -39,11 +39,12 @@ class AdminUser < ApplicationRecord
   validate :username_is_allowed
   validate :no_new_users_on_monday, :on => :create
 
-  private
-
   def name
     "#{first_name} #{last_name}"
   end
+  
+  private
+
 
   def username_is_allowed
     if FORBIDDEN_USERNAMES.include?(username)
